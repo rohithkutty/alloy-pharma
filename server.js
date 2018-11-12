@@ -4,7 +4,7 @@ const bodyParser = require("body-parser");
 const path = require("path");
 
 //API models
-const users = require("./routes/api/medicines");
+const medicines = require("./routes/api/medicines");
 
 const app = express();
 
@@ -25,11 +25,11 @@ mongoose
   .catch(err => console.log(err));
 
 // Use Routes
-app.use("/api/medicines", users);
+app.use("/api/medicines", medicines);
 
 //Serving static files
 // app.use(express.static(path.join(__dirname, "client/build")));
 
-const port = process.env.PORT || 5005;
+const port = process.env.PORT || 5006;
 
 app.listen(port, () => console.log(`Server running on port ${port}`));
